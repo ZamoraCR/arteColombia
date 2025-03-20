@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARTE SENSUAL</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="img/logoArteSensual.png" alt="LogoAS">
+        </div>
+        <nav>
+            <div class="menu-icon" id="menu-icon">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#colecciones">Colecciones</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section con Carrusel -->
+    <section class="hero">
+        <div class="carrusel">
+            <div class="carrusel-container">
+                <div class="carrusel-slide">
+                    <img src="img/background.jpg" alt="Slide 1">
+                </div>
+                <div class="carrusel-slide">
+                    <img src="img/bc2.jpg" alt="Slide 2">
+                </div>
+                
+            </div>
+        </div>
+        <div class="hero-content">
+            <h1>Bienvenido a Mi Lencería</h1>
+            <p>Descubre la elegancia y comodidad en cada detalle.</p>
+            <a href="#colecciones" class="btn">Ver Colección</a>
+        </div>
+    </section>
+
+   <!-- Resto del contenido (Colecciones, Footer, etc.) -->
+<section id="colecciones" class="colecciones">
+    <h2>Nuestras Colecciones</h2>
+    <div class="grid">
+        <div class="item">
+            <img src="img/producto1.webp" alt="Colección 1">
+            <h3>Colección Clásica</h3>
+            <p>Lencería atemporal para todos los días.</p>
+            <a href="https://wa.me/50670549621?text=Hola,%20estoy%20interesado%20en%20la%20Colección%20Clásica" class="btn-comprar">Comprar</a>
+        </div>
+        <div class="item">
+            <img src="img/producto2.jpg" alt="Colección 2">
+            <h3>Colección Sensual</h3>
+            <p>Diseños que resaltan tu belleza.</p>
+            <a href="https://wa.me/50670549621?text=Hola,%20estoy%20interesado%20en%20la%20Colección%20Sensual" class="btn-comprar">Comprar</a>
+        </div>
+        <div class="item">
+            <img src="img/producto3.jpg" alt="Colección 3">
+            <h3>Colección Nocturna</h3>
+            <p>Pijamas y prendas para dormir con estilo.</p>
+            <a href="https://wa.me/50670549621?text=Hola,%20estoy%20interesado%20en%20la%20Colección%20Nocturna" class="btn-comprar">Comprar</a>
+        </div>
+
+        <div class="item">
+            <img src="img/producto3.jpg" alt="Colección 3">
+            <h3>Colección Nocturna</h3>
+            <p>Pijamas y prendas para dormir con estilo.</p>
+            <a href="https://wa.me/50670549621?text=Hola,%20estoy%20interesado%20en%20la%20Colección%20Nocturna" class="btn-comprar">Comprar</a>
+        </div>
+    </div>
+</section>
+
+   <!-- Footer -->
+<footer id="contacto">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Arte Sensual</h3>
+            <p>&copy; 2025 Arte Sensual. Todos los derechos reservados.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Redes Sociales</h3>
+            <ul class="social-icons">
+                <li><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="https://wa.me/50670549621" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contacto</h3>
+            <form class="contact-form">
+                <input type="text" placeholder="Nombre" required>
+                <input type="email" placeholder="Correo electrónico" required>
+                <textarea placeholder="Mensaje" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <ul>
+            <li><a href="#">Política de Privacidad</a></li>
+            <li><a href="#">Términos y Condiciones</a></li>
+        </ul>
+    </div>
+</footer>
+    <!-- JavaScript para el menú desplegable -->
+    <script>
+        const menuIcon = document.getElementById('menu-icon');
+        const navLinks = document.getElementById('nav-links');
+
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+
+    <!-- JavaScript para el carrusel -->
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.carrusel-slide');
+        const totalSlides = slides.length;
+
+        function showNextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            const offset = -currentIndex * 100;
+            document.querySelector('.carrusel-container').style.transform = `translateX(${offset}%)`;
+        }
+
+        // Cambia de slide cada 5 segundos (5000 ms)
+        setInterval(showNextSlide, 5000);
+    </script>
+</body>
+</html>
